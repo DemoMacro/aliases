@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "devDependencies": {
+    "@aliases/zxcvbn": "workspace:*",
+    "@types/benchmark": "2.1.1",
+    "@types/zxcvbn": "4.4.1"
+  }
+}

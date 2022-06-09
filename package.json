@@ -1,0 +1,44 @@
+{
+  "name": "@demomacro/aliases",
+  "version": "0.0.0",
+  "description": "Alias alternative to the utility library, powered by Demo Macro.",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r prepack",
+    "lint:js": "eslint . --ext \".cjs,.mjs,.ts\" --ignore-path .gitignore",
+    "lint:prettier": "prettier --check . --ignore-path .gitignore",
+    "lint": "pnpm lint:js && pnpm lint:prettier",
+    "lintfix": "prettier --write --list-different . --ignore-path .gitignore && pnpm lint:js --fix",
+    "postinstall": "githooks install"
+  },
+  "lint-staged": {
+    "*.{cjs,mjs,ts}": "eslint --cache",
+    "*.**": "prettier --check --ignore-unknown"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DemoMacro/aliases.git"
+  },
+  "author": {
+    "name": "Demo Macro",
+    "email": "abc@imst.xyz",
+    "url": "https://imst.xyz/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DemoMacro/aliases/issues"
+  },
+  "homepage": "https://github.com/DemoMacro/aliases#readme",
+  "devDependencies": {
+    "@commitlint/cli": "17.0.2",
+    "@commitlint/config-conventional": "17.0.2",
+    "@funish/eslint-config": "0.0.1",
+    "@funish/githooks": "0.0.3",
+    "@types/node": "17.0.41",
+    "eslint": "8.17.0",
+    "lint-staged": "13.0.1",
+    "prettier": "2.6.2",
+    "typescript": "4.7.3",
+    "unbuild": "0.7.4"
+  }
+}
