@@ -8,6 +8,7 @@
 ## Packages
 
 - [@aliases/zxcvbn](./packages/zxcvbn/README.md)
+- [@aliases/systeminformation](./packages/systeminformation/README.md)
 
 ## Credits
 
