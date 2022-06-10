@@ -308,7 +308,7 @@ export function get(valueObject, callback) {
   return new Promise((resolve) => {
     process.nextTick(() => {
       const allPromises = Object.keys(valueObject)
-        .filter((func) => ({}.hasOwnProperty.call(exports, func)))
+        .filter((func) => ({}.hasOwnProperty.call(defaultExport, func)))
         .map((func) => {
           const params = valueObject[func].substring(
             valueObject[func].lastIndexOf("(") + 1,
@@ -321,9 +321,9 @@ export function get(valueObject, callback) {
               ? func.split("|")[0].trim()
               : funcWithoutParams;
           if (params) {
-            return exports[funcWithoutParams](params);
+            return defaultExport[funcWithoutParams](params);
           } else {
-            return exports[funcWithoutParams]("");
+            return defaultExport[funcWithoutParams]("");
           }
         });
 
@@ -333,7 +333,7 @@ export function get(valueObject, callback) {
         for (let key in valueObject) {
           if (
             {}.hasOwnProperty.call(valueObject, key) &&
-            {}.hasOwnProperty.call(exports, key) &&
+            {}.hasOwnProperty.call(defaultExport, key) &&
             data.length > i
           ) {
             if (valueObject[key] === "*" || valueObject[key] === "all") {
@@ -514,3 +514,66 @@ export const bluetoothDevices = bluetooth.bluetoothDevices;
 
 export const powerShellStart = util.powerShellStart;
 export const powerShellRelease = util.powerShellRelease;
+
+const defaultExport = {
+  audio,
+  baseboard,
+  battery,
+  bios,
+  blockDevices,
+  bluetoothDevices,
+  chassis,
+  cpu,
+  cpuCache,
+  cpuCurrentSpeed,
+  cpuFlags,
+  cpuTemperature,
+  currentLoad,
+  diskLayout,
+  disksIO,
+  dockerAll,
+  dockerContainerProcesses,
+  dockerContainerStats,
+  dockerContainers,
+  dockerImages,
+  dockerInfo,
+  dockerVolumes,
+  fsOpenFiles,
+  fsSize,
+  fsStats,
+  fullLoad,
+  get,
+  getAllData,
+  getDynamicData,
+  getStaticData,
+  graphics,
+  inetChecksite,
+  inetLatency,
+  mem,
+  memLayout,
+  networkConnections,
+  networkGatewayDefault,
+  networkInterfaceDefault,
+  networkInterfaces,
+  networkStats,
+  observe,
+  osInfo,
+  powerShellRelease,
+  powerShellStart,
+  printer,
+  processLoad,
+  processes,
+  services,
+  shell,
+  system,
+  time,
+  usb,
+  users,
+  uuid,
+  vboxInfo,
+  version,
+  versions,
+  wifiConnections,
+  wifiInterfaces,
+  wifiNetworks,
+};

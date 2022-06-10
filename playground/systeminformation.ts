@@ -1,1 +1,8 @@
-import sysInfo from "@aliases/systeminformation";
+import { get } from "@aliases/systeminformation";
+
+get({
+  currentLoad: "currentLoad",
+  fullLoad: "*",
+  mem: "*",
+  fsSize: "*",
+});
