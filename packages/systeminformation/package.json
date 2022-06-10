@@ -1,7 +1,7 @@
 {
   "name": "@aliases/systeminformation",
   "version": "0.0.0",
-  "description": "A system information library based on Node.js, powered by Demo Macro.",
+  "description": "A system information library, powered by Demo Macro.",
   "main": "dist/index.mjs",
   "types": "dist/index.d.ts",
   "scripts": {
