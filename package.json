@@ -30,8 +30,8 @@
   },
   "homepage": "https://github.com/DemoMacro/aliases#readme",
   "devDependencies": {
-    "@commitlint/cli": "17.0.2",
-    "@commitlint/config-conventional": "17.0.2",
+    "@commitlint/cli": "17.0.3",
+    "@commitlint/config-conventional": "17.0.3",
     "@funish/eslint-config": "0.0.1",
     "@funish/githooks": "0.0.3",
     "@types/node": "17.0.41",
